@@ -1,9 +1,9 @@
 {
-  "name": "working-record-swagger",
+  "name": "attend-system-swagger",
   "version": "1.0.0",
   "description": "attendSystem バックエンドAPI仕様書",
-  "homepage": "/working-record-swagger",
-  "author": "Alesion30",
+  "homepage": "/attend-system-swagger",
+  "author": "Hiromu25",
   "license": "ISC",
   "scripts": {
     "start": "react-scripts start",
