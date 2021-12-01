@@ -1,0 +1,2 @@
+(this["webpackJsonpworking-record-swagger"]=this["webpackJsonpworking-record-swagger"]||[]).push([[0],{218:function(r,e,n){"use strict";n.r(e);n(0);var t=n(51),o=n.n(t),c=n(199),s=(n(965),n(124)),a=function(){return Object(s.jsx)(c.a,{url:"swagger.yaml"})},g=document.getElementById("root");o.a.render(Object(s.jsx)(a,{}),g)},943:function(r,e){},945:function(r,e){}},[[218,1,2]]]);
+//# sourceMappingURL=main.f1c56f42.chunk.js.map
