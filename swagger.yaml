@@ -1,0 +1,233 @@
+openapi: 3.0.0
+info:
+  description: attendSystem バックエンドAPI仕様書
+  version: 1.0.0
+  title: working record API
+servers:
+  - url: 'http://localhost:8880'
+    description: Development Server
+  - url: 'https://ik1-220-80341.vs.sakura.ne.jp/attend-system'
+    description: Production Server
+tags:
+  - name: user
+    description: Operations about user
+paths:
+  /user:
+    get:
+      security:
+        - Bearer: []
+      tags:
+        - user
+      summary: ユーザー一覧取得
+      description: ユーザーの情報一覧を取得
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '500':
+          $ref: '#/components/responses/500'
+  /obniz:
+    get:
+      security:
+        - Bearer: []
+      tags:
+        - obniz
+      summary: obniz一覧取得
+      description: obnizの情報一覧を取得
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Obniz'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '500':
+          $ref: '#/components/responses/500'
+  /scan:
+    get:
+      security:
+        - Bearer: []
+      tags:
+        - scan
+      summary: スキャンデータ取得
+      description: obnizの情報一覧を取得
+      parameters:
+        - name: userId
+          in: query
+          description: 検索ユーザIDリスト
+          type: string
+          example: U01TC9HRG3A
+        - name: obnizId
+          in: query
+          description: 検索ObnizIDリスト
+          type: string
+          example: '32946696'
+        - name: oldest
+          in: query
+          description: 'UnixTime(秒),検索範囲下限'
+          type: number
+          example: 1638284400
+        - name: latest
+          in: query
+          description: 'UnixTime(秒),検索範囲上限'
+          type: number
+          example: 1638329400
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    obnizInfo:
+                      $ref: '#/components/schemas/Obniz'
+                    scanUsers:
+                      type: array
+                      items:
+                        $ref: '#/components/schemas/ScanData'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '500':
+          $ref: '#/components/responses/500'
+components:
+  securitySchemes:
+    Bearer:
+      type: http
+      scheme: bearer
+      description: Credentials or access token for API
+  schemas:
+    User:
+      description: ユーザー
+      type: object
+      properties:
+        userUid:
+          description: SlackユーザーID
+          type: string
+          example: U01TC9HRG3A
+        userName:
+          description: ユーザー名
+          type: string
+          example: 本松大夢
+        macAddress:
+          description: ビーコンmacアドレス
+          type: string
+          example: 886b0ff434b7
+    Obniz:
+      description: obniz
+      type: object
+      properties:
+        obnizId:
+          description: obnizID
+          type: string
+          example: '30773432'
+        obnizName:
+          description: obniz名
+          type: string
+          example: ヒューマノフィリック研究室
+        isActive:
+          description: スキャン中かどうか
+          type: bool
+          example: true
+    ScanData:
+      description: スキャン情報
+      type: object
+      properties:
+        userUid:
+          description: SlackユーザーID
+          type: string
+          example: U01TC9HRG3A
+        userName:
+          description: ユーザー名
+          type: string
+          example: 本松大夢
+        macAddress:
+          description: ビーコンmacアドレス
+          type: string
+          example: 886b0ff434b7
+        scanData:
+          description: スキャンデータ
+          type: array
+          items:
+            type: object
+            properties:
+              rssi:
+                description: 電波強度
+                type: number
+                example: -60
+              timestamp:
+                description: UnixTime(秒)
+                type: number
+                example: 1638329400
+    Error:
+      description: エラー
+      type: object
+      properties:
+        status:
+          description: エラーコード
+          type: number
+          example: 401
+        message:
+          description: エラーメッセージ
+          type: string
+          example: Unauthorized
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          example:
+            status: 200
+            message: success
+    '400':
+      description: パラメータが不正
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            status: 400
+            message: Bad Request
+    '401':
+      description: 認証失敗
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            status: 401
+            message: Unauthorized token
+    '404':
+      description: データなし
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            status: 404
+            message: Data is not found
+    '500':
+      description: サーバーエラー
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            status: 500
+            message: Server Error
