@@ -1,0 +1,14 @@
+type: object
+properties:
+  obnizId:
+    description: obnizID
+    type: string
+    example: "30773432"
+  obnizName:
+    description: obniz名
+    type: string
+    example: "ヒューマノフィリック研究室"
+  isActive:
+    description: スキャン中かどうか
+    type: bool
+    example: true

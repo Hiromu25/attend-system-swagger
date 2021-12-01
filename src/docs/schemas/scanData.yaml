@@ -1,0 +1,28 @@
+type: object
+properties:
+  userUid:
+    description: SlackユーザーID
+    type: string
+    example: "U01TC9HRG3A"
+  userName:
+    description: ユーザー名
+    type: string
+    example: "本松大夢"
+  macAddress:
+    description: ビーコンmacアドレス
+    type: string
+    example: "886b0ff434b7"
+  scanData:
+    description: スキャンデータ
+    type: array
+    items:
+      type: object
+      properties:
+        rssi:
+          description: 電波強度
+          type: number
+          example: -60
+        timestamp:
+          description: UnixTime(秒)
+          type: number
+          example: 1638329400

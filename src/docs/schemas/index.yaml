@@ -1,0 +1,15 @@
+User:
+  description: ユーザー
+  $ref: "./user.yaml"
+
+Obniz:
+  description: obniz
+  $ref: "./obniz.yaml"
+
+ScanData:
+  description: スキャン情報
+  $ref: "./scanData.yaml"
+
+Error:
+  description: エラー
+  $ref: "./error.yaml"

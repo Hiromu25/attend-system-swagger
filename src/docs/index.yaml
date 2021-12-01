@@ -1,0 +1,32 @@
+openapi: "3.0.0"
+
+info:
+  description: "attendSystem バックエンドAPI仕様書"
+  version: "1.0.0"
+  title: "working record API"
+
+servers:
+  - url: http://localhost:8880
+    description: "Development Server"
+  - url: https://ik1-220-80341.vs.sakura.ne.jp/attend-system
+    description: "Production Server"
+
+tags:
+  - name: "user"
+    description: "Operations about user"
+
+paths:
+  $ref: "./paths/index.yaml"
+
+components:
+  securitySchemes:
+    Bearer:
+      type: http
+      scheme: bearer
+      description: Credentials or access token for API
+
+  schemas:
+    $ref: "./schemas/index.yaml"
+
+  responses:
+    $ref: "./responses/index.yaml"

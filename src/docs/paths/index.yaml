@@ -1,0 +1,9 @@
+# user ユーザー
+/user:
+  $ref: "./user/index.yaml"
+
+/obniz:
+  $ref: "./obniz/index.yaml"
+
+/scan:
+  $ref: "./scan/index.yaml"
