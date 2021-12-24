@@ -7,3 +7,6 @@
 
 /scan:
   $ref: "./scan/index.yaml"
+
+/attend:
+  $ref: "./attend/index.yaml"
