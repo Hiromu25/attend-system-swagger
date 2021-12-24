@@ -1,6 +1,6 @@
 type: object
 properties:
-  userUid:
+  userId:
     description: SlackユーザーID
     type: string
     example: "U01TC9HRG3A"
