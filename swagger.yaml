@@ -106,6 +106,56 @@ paths:
           $ref: '#/components/responses/401'
         '500':
           $ref: '#/components/responses/500'
+  /attend:
+    get:
+      security:
+        - Bearer: []
+      tags:
+        - attend
+      summary: 出席データ取得
+      description: 検索範囲内の出席ユーザを取得
+      parameters:
+        - name: userId
+          in: query
+          description: 検索ユーザIDリスト
+          type: string
+          example: U01TC9HRG3A
+        - name: obnizId
+          in: query
+          description: 検索ObnizIDリスト
+          type: string
+          example: '32946696'
+        - name: oldest
+          in: query
+          description: 'UnixTime(秒),検索範囲下限'
+          type: number
+          example: 1638284400
+        - name: latest
+          in: query
+          description: 'UnixTime(秒),検索範囲上限'
+          type: number
+          example: 1638329400
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    obnizInfo:
+                      $ref: '#/components/schemas/Obniz'
+                    scanUsers:
+                      type: array
+                      items:
+                        $ref: '#/components/schemas/ScanData'
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '500':
+          $ref: '#/components/responses/500'
 components:
   securitySchemes:
     Bearer:

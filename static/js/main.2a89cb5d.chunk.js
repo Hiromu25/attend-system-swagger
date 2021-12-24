@@ -1,2 +1,0 @@
-(this["webpackJsonpattend-system-swagger"]=this["webpackJsonpattend-system-swagger"]||[]).push([[0],{218:function(t,e,n){"use strict";n.r(e);n(0);var s=n(51),r=n.n(s),a=n(199),c=(n(965),n(124)),o=function(){return Object(c.jsx)(a.a,{url:"swagger.yaml"})},u=document.getElementById("root");r.a.render(Object(c.jsx)(o,{}),u)},943:function(t,e){},945:function(t,e){}},[[218,1,2]]]);
-//# sourceMappingURL=main.2a89cb5d.chunk.js.map

@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/attend-system-swagger/static/js/main.2a89cb5d.chunk.js",
-    "main.js.map": "/attend-system-swagger/static/js/main.2a89cb5d.chunk.js.map",
+    "main.js": "/attend-system-swagger/static/js/main.61abe9c0.chunk.js",
+    "main.js.map": "/attend-system-swagger/static/js/main.61abe9c0.chunk.js.map",
     "runtime-main.js": "/attend-system-swagger/static/js/runtime-main.be25e157.js",
     "runtime-main.js.map": "/attend-system-swagger/static/js/runtime-main.be25e157.js.map",
-    "static/css/2.3c99c4ec.chunk.css": "/attend-system-swagger/static/css/2.3c99c4ec.chunk.css",
-    "static/js/2.41f4030b.chunk.js": "/attend-system-swagger/static/js/2.41f4030b.chunk.js",
-    "static/js/2.41f4030b.chunk.js.map": "/attend-system-swagger/static/js/2.41f4030b.chunk.js.map",
+    "static/css/2.f74eec07.chunk.css": "/attend-system-swagger/static/css/2.f74eec07.chunk.css",
+    "static/js/2.e039bec6.chunk.js": "/attend-system-swagger/static/js/2.e039bec6.chunk.js",
+    "static/js/2.e039bec6.chunk.js.map": "/attend-system-swagger/static/js/2.e039bec6.chunk.js.map",
     "index.html": "/attend-system-swagger/index.html",
-    "static/css/2.3c99c4ec.chunk.css.map": "/attend-system-swagger/static/css/2.3c99c4ec.chunk.css.map",
-    "static/js/2.41f4030b.chunk.js.LICENSE.txt": "/attend-system-swagger/static/js/2.41f4030b.chunk.js.LICENSE.txt"
+    "static/css/2.f74eec07.chunk.css.map": "/attend-system-swagger/static/css/2.f74eec07.chunk.css.map",
+    "static/js/2.e039bec6.chunk.js.LICENSE.txt": "/attend-system-swagger/static/js/2.e039bec6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.be25e157.js",
-    "static/css/2.3c99c4ec.chunk.css",
-    "static/js/2.41f4030b.chunk.js",
-    "static/js/main.2a89cb5d.chunk.js"
+    "static/css/2.f74eec07.chunk.css",
+    "static/js/2.e039bec6.chunk.js",
+    "static/js/main.61abe9c0.chunk.js"
   ]
 }
