@@ -167,7 +167,7 @@ components:
       description: ユーザー
       type: object
       properties:
-        userUid:
+        userId:
           description: SlackユーザーID
           type: string
           example: U01TC9HRG3A
@@ -199,7 +199,7 @@ components:
       description: スキャン情報
       type: object
       properties:
-        userUid:
+        userId:
           description: SlackユーザーID
           type: string
           example: U01TC9HRG3A
